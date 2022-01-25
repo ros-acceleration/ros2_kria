@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ros2_kria_power</name>
+  <version>0.1.0</version>
+  <description>
+    A composable ROS 2 Node that publishes Kria SOM's power information
+    into the corresponding Topic of the computational graph.
+
+    The Node is LTTng instrumented, so that when built with tracing it records
+    the power in the corresponding trace.
+
+    TODO: create an Action to calculate the Power consumed over an argument
+    amount of seconds (or milliseconds).
+  </description>
+  <maintainer email="victorma@xilinx.com">Víctor Mayoral Vilches</maintainer>
+  <license>Apache License 2.0</license>
+  <author email="victorma@xilinx.com">Víctor Mayoral Vilches</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_vitis</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>tracetools</depend>
+  <depend>tracetools_acceleration</depend>
+  <depend>ros2_kria_msgs</depend>
+  <depend>acceleration_firmware_kv260</depend>
+
+  <build_depend>rcutils</build_depend>
+  <build_depend>vitis_common</build_depend>
+
+  <exec_depend>launch_ros</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
