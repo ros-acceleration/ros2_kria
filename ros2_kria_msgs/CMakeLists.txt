@@ -15,11 +15,13 @@ find_package(ament_cmake REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/Power.msg"
-  "msg/Current.msg"
-  "msg/Voltage.msg"
-  DEPENDENCIES builtin_interfaces
-)
+if (ROS_VITIS)
+  rosidl_generate_interfaces(${PROJECT_NAME}
+    "msg/Power.msg"
+    "msg/Current.msg"
+    "msg/Voltage.msg"
+    DEPENDENCIES builtin_interfaces
+  )
+endif()
 
 ament_package()
